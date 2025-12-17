@@ -1,30 +1,61 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import { onMounted, onUnmounted, ref } from 'vue';
+import { scale as scaleFunc } from './utils/index'
+import Header from './components/Head/index.vue'
+import Box1 from './components/Box1/index.vue'
+import Box2 from './components/Box2/index.vue'
+import Box3 from './components/Box3/index.vue'
+import Box4 from './components/Box4/index.vue'
+import Box5 from './components/Box5/index.vue'
+
+
+const scaleValue = ref(1)
+
+const updateScale = () => {
+  scaleValue.value = scaleFunc()
+}
+onMounted(() => {
+  updateScale()
+  window.addEventListener('resize', updateScale)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateScale)
+
+})
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="app" :style="{ transform: `scale(${scaleValue}) translate(-50%,-50%)` }">
+
+    <Header />
+
+    <div class="line1">
+      <Box1 />
+      <Box2 />
+      <Box3 />
+    </div>
+    <div class="line2">
+      <Box4 />
+      <Box5 />
+    </div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+<style scoped lang="less">
+.app {
+  width: 1920px;
+  height: 1080px;
+  transform-origin: 0 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.line1,
+.line2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 </style>
