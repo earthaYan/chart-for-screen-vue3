@@ -7,38 +7,24 @@
 </template>
 <script lang="ts" setup>
 import * as  echarts from 'echarts'
-import { onMounted, onUnmounted, ref } from 'vue';
+import { useEcharts } from '../../hooks/useEcharts';
+const options = {
+    xAxis: {
+        type: "value",
+    },
+    yAxis: {
+        type: "category",
+        data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    },
+    series: [
+        {
+            data: [120, 200, 150, 80, 70, 110, 130],
+            type: "bar",
+        },
+    ],
+};
 
-const chartRef = ref<HTMLDivElement | null>(null)
-let chart: echarts.ECharts | null = null
-
-onMounted(() => {
-    if (chartRef.value) {
-        chart = echarts.init(chartRef.value)
-        const options = {
-            xAxis: {
-                type: "value",
-            },
-            yAxis: {
-                type: "category",
-                data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-            },
-            series: [
-                {
-                    data: [120, 200, 150, 80, 70, 110, 130],
-                    type: "bar",
-                },
-            ],
-        };
-        chart.setOption(options)
-    }
-})
-
-onUnmounted(() => {
-    if (chart) {
-        chart.dispose()
-    }
-})
+const { chartRef } = useEcharts(options)
 </script>
 <style lang="less" scoped>
 .box2 {
