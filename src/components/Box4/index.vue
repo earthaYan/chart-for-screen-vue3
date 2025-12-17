@@ -1,10 +1,7 @@
 <template>
-    <div class="box4">
-        <dv-border-box1>
-            <dv-scroll-board :config="config" style="width: 1200px;height: 300px" />
-        </dv-border-box1>
-    </div>
-
+    <dv-border-box1>
+        <dv-scroll-board :config="config" style="width: 1200px;height: 300px" />
+    </dv-border-box1>
 </template>
 <script lang="ts" setup>
 import { ref } from 'vue';

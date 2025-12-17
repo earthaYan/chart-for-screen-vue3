@@ -1,9 +1,7 @@
 <template>
-    <div class="box3">
-        <dv-border-box1>
-            <div class="chart-container" ref="chartRef"></div>
-        </dv-border-box1>
-    </div>
+    <dv-border-box1>
+        <div class="chart-container" ref="chartRef"></div>
+    </dv-border-box1>
 </template>
 <script lang="ts" setup>
 import { ref } from "vue";
@@ -47,11 +45,6 @@ const options = ref({
 const { chartRef } = useEcharts(options);
 </script>
 <style lang="less" scoped>
-.box3 {
-    width: 640px;
-    height: 560px;
-}
-
 .chart-container {
     width: 100%;
     height: 100%;

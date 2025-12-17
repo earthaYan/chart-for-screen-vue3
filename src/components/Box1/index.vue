@@ -49,18 +49,11 @@ const { chartRef } = useEcharts(options)
 
 </script>
 <template>
-    <div class="box1">
-        <dv-border-box1>
-            <div ref="chartRef" class="chart-container"></div>
-        </dv-border-box1>
-    </div>
+    <dv-border-box1>
+        <div ref="chartRef" class="chart-container"></div>
+    </dv-border-box1>
 </template>
 <style lang="less" scoped>
-.box1 {
-    width: 640px;
-    height: 560px;
-}
-
 .chart-container {
     width: 100%;
     height: 100%;

@@ -11,6 +11,9 @@ import {
   TransformComponent,
   LegendComponent,
   ToolboxComponent,
+  DataZoomSliderComponent,
+  DataZoomInsideComponent,
+  VisualMapComponent,
 } from "echarts/components";
 // 标签自动布局、全局过渡动画等特性
 import { LabelLayout, UniversalTransition } from "echarts/features";
@@ -32,6 +35,9 @@ echarts.use([
   CanvasRenderer,
   LegendComponent,
   ToolboxComponent,
+  DataZoomSliderComponent,
+  DataZoomInsideComponent,
+  VisualMapComponent,
 ]);
 
 export const useEcharts = (options: Ref<echarts.EChartsCoreOption>) => {

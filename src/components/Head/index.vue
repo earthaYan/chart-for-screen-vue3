@@ -13,6 +13,7 @@
 </script>
 <style lang="less" scoped>
 .head-wrapper {
+    box-sizing: border-box;
     width: 100%;
     height: 90px;
     display: flex;

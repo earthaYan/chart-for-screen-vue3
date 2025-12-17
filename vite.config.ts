@@ -4,6 +4,14 @@ import viteCompression from "vite-plugin-compression";
 import { visualizer } from "rollup-plugin-visualizer";
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    proxy: {
+      "/data": {
+        target: "https://echarts.apache.org/examples",
+        changeOrigin: true,
+      },
+    },
+  },
   plugins: [
     vue(),
     viteCompression({

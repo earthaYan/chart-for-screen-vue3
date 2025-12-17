@@ -7,6 +7,7 @@ import Box2 from './components/Box2/index.vue'
 import Box3 from './components/Box3/index.vue'
 import Box4 from './components/Box4/index.vue'
 import Box5 from './components/Box5/index.vue'
+import Box6 from './components/Box6/index.vue'
 
 
 const scaleValue = ref(1)
@@ -39,6 +40,9 @@ onUnmounted(() => {
       <Box4 />
       <Box5 />
     </div>
+    <div class="line2">
+      <Box6 />
+    </div>
   </div>
 </template>
 
@@ -54,6 +58,7 @@ onUnmounted(() => {
 
 .line1,
 .line2 {
+  height: 300px;
   display: flex;
   justify-content: space-between;
   align-items: center;

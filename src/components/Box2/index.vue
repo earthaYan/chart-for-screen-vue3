@@ -1,9 +1,7 @@
 <template>
-    <div class="box2">
-        <dv-border-box1>
-            <div class="chart-container" ref="chartRef"></div>
-        </dv-border-box1>
-    </div>
+    <dv-border-box1>
+        <div class="chart-container" ref="chartRef"></div>
+    </dv-border-box1>
 </template>
 <script lang="ts" setup>
 import { useEcharts } from '../../hooks/useEcharts';
@@ -27,11 +25,6 @@ const options = ref({
 const { chartRef } = useEcharts(options)
 </script>
 <style lang="less" scoped>
-.box2 {
-    width: 640px;
-    height: 560px;
-}
-
 .chart-container {
     width: 100%;
     height: 100%;
