@@ -6,9 +6,10 @@
     </div>
 </template>
 <script lang="ts" setup>
+import { ref } from "vue";
 import { useEcharts } from "../../hooks/useEcharts";
 
-const options = {
+const options = ref({
     title: {
         text: "Basic Radar Chart",
     },
@@ -42,7 +43,7 @@ const options = {
             ],
         },
     ],
-};
+});
 const { chartRef } = useEcharts(options);
 </script>
 <style lang="less" scoped>

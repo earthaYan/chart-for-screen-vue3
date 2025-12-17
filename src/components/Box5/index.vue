@@ -6,8 +6,9 @@
     </div>
 </template>
 <script lang="ts" setup>
+import { ref } from 'vue';
 import { useEcharts } from '../../hooks/useEcharts';
-const options = {
+const options = ref({
     title: {
         text: "Stacked Area Chart",
     },
@@ -96,7 +97,7 @@ const options = {
             data: [820, 932, 901, 934, 1290, 1330, 1320],
         },
     ],
-};
+});
 
 const { chartRef } = useEcharts(options)
 

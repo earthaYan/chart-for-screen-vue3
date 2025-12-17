@@ -6,9 +6,9 @@
     </div>
 </template>
 <script lang="ts" setup>
-import * as  echarts from 'echarts'
 import { useEcharts } from '../../hooks/useEcharts';
-const options = {
+import { ref } from 'vue';
+const options = ref({
     xAxis: {
         type: "value",
     },
@@ -22,7 +22,7 @@ const options = {
             type: "bar",
         },
     ],
-};
+});
 
 const { chartRef } = useEcharts(options)
 </script>

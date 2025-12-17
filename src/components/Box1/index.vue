@@ -1,7 +1,8 @@
 <script lang="ts" setup>
+import { ref } from 'vue';
 import { useEcharts } from '../../hooks/useEcharts';
 
-const options = {
+const options = ref({
     tooltip: {
         trigger: "item",
     },
@@ -43,7 +44,7 @@ const options = {
             ],
         },
     ],
-};
+});
 const { chartRef } = useEcharts(options)
 
 </script>
