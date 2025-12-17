@@ -1,7 +1,7 @@
 <template>
     <div class="box4">
         <dv-border-box1>
-            <dv-scroll-board :config="config" style="width: 1270px;height: 370px;padding-top: 10px;" />
+            <dv-scroll-board :config="config" style="width: 1200px;height: 380px" />
         </dv-border-box1>
     </div>
 
